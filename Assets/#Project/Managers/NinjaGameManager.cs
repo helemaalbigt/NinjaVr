@@ -53,6 +53,9 @@ public class NinjaGameManager : RealtimeComponent
     }
     
     private void Update() {
+        if (!isMasterClient)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Tab)) {
             uint ninjaGameState = _model.gameState;
             ninjaGameState++;
@@ -113,7 +116,6 @@ public class NinjaGameManager : RealtimeComponent
     }
 
     void DoRoundSetUp() {
-        _roundCount++;
 
         if (isMasterClient)
             _model.gameState = (uint)GameState.P1AttackRound;
@@ -136,11 +138,6 @@ public class NinjaGameManager : RealtimeComponent
         } while (elaspedTime < _roundTimeLimit);
 
         if (isMasterClient)
-            _model.gameState = (uint)GameState.Break;
-    }
-
-    void Break() {
-        if (isMasterClient)
             _model.gameState = (uint)GameState.P2AttackRound;
     }
         
@@ -160,8 +157,10 @@ public class NinjaGameManager : RealtimeComponent
 
         } while (elaspedTime < _roundTimeLimit);
 
+        _roundCount++;
+
         if (isMasterClient)
-            _model.gameState = (uint)GameState.RoundSetUp;
+            _model.gameState = (uint)GameState.P1AttackRound;
     }
 
     void DoGameResults() {
