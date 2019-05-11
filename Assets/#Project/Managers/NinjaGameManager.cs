@@ -10,6 +10,10 @@ public class NinjaGameManager : RealtimeComponent
     public event Action<GameState> OnGameStateChanged;
 
     [SerializeField]
+    private float _roundCount;
+    public  float  roundCount { get { return _roundCount; } }
+
+    [SerializeField]
     private double _roundElasped;
     public  double  roundElasped { get { return _roundElasped; } }
 
@@ -23,21 +27,19 @@ public class NinjaGameManager : RealtimeComponent
 
     public static NinjaGameManager currentInstance;
 
-    public enum GameState{
+    public enum GameState {
                 Intro,
-                SetUp,
-               Round1,
-        Round1Results,
-               Round2,
-        Round2Results,
+           RoundSetUp,
+        P1AttackRound,
+                Break,
+        P2AttackRound,
           GameResults,
     }
 
     private NinjaGameManagerModel _model;
     public  NinjaGameManagerModel  model { set { SetModel(value); } }
 
-    // TODO find a way to get the players owner ID of the player that is calling this?
-    //private bool isMasterClient { get { return realtimeView.ownerID == 0; } }
+    private bool isMasterClient { get { return realtime.clientID == 0; } }
 
     private void Awake() {
         currentInstance = this;
@@ -82,24 +84,20 @@ public class NinjaGameManager : RealtimeComponent
             case ((uint)NinjaGameManager.GameState.Intro):
                 break;
 
-            case ((uint)NinjaGameManager.GameState.SetUp):
-                DoSetUp();
+            case ((uint)NinjaGameManager.GameState.RoundSetUp):
+                DoRoundSetUp();
                 break;
 
-            case ((uint)NinjaGameManager.GameState.Round1):
-                StartCoroutine(DoRound1());
+            case ((uint)NinjaGameManager.GameState.P1AttackRound):
+                StartCoroutine(DoP1AttackRound());
                 break;
 
-            case ((uint)NinjaGameManager.GameState.Round1Results):
-                    DoRound1Results();
+            case ((uint)NinjaGameManager.GameState.Break):
+                    Break();
                 break;
 
-            case ((uint)NinjaGameManager.GameState.Round2):
-                StartCoroutine(DoRound2());
-                break;
-
-            case ((uint)NinjaGameManager.GameState.Round2Results):
-                DoRound2Results();
+            case ((uint)NinjaGameManager.GameState.P2AttackRound):
+                StartCoroutine(DoP2AttackRound());
                 break;
 
             case ((uint)NinjaGameManager.GameState.GameResults):
@@ -109,44 +107,67 @@ public class NinjaGameManager : RealtimeComponent
 
     }
 
-    void DoSetUp() {
-        //if (isMasterClient)
-        _model.gameState = (uint)GameState.Round1;
+    void DoRoundSetUp() {
+        _roundCount++;
+
+        if (isMasterClient)
+            _model.gameState = (uint)GameState.P1AttackRound;
     }
 
-    IEnumerator DoRound1() {
-        //if (isMasterClient)
-        _model.startTime = realtime.room.time;
+    IEnumerator DoP1AttackRound() {
+        if (isMasterClient)
+            _model.startTime = realtime.room.time;
 
         double elaspedTime;
 
         do {
             elaspedTime = realtime.room.time - _model.startTime;
             yield return null;
-            _roundElasped  =   elaspedTime;
+            _roundElasped = elaspedTime;
 
-            if (_model.gameState != (uint)GameState.Round1)
+            if (_model.gameState != (uint)GameState.P1AttackRound)
                 yield break;
 
         } while (elaspedTime < _roundTimeLimit);
 
-        //if (isMasterClient)
-        _model.gameState = (uint)GameState.Round1Results;
+        if (isMasterClient)
+            _model.gameState = (uint)GameState.Break;
     }
 
-    void DoRound1Results() {
-
+    void Break() {
+        if (isMasterClient)
+            _model.gameState = (uint)GameState.P2AttackRound;
     }
+        
+    IEnumerator DoP2AttackRound() {
+        if (isMasterClient)
+            _model.startTime = realtime.room.time;
 
-    IEnumerator DoRound2() {
-       yield return null;
-    }
+        double elaspedTime;
 
-    void DoRound2Results() {
+        do {
+            elaspedTime = realtime.room.time - _model.startTime;
+            yield return null;
+            _roundElasped = elaspedTime;
 
+            if (_model.gameState != (uint)GameState.P2AttackRound)
+                yield break;
+
+        } while (elaspedTime < _roundTimeLimit);
+
+        if (isMasterClient)
+            _model.gameState = (uint)GameState.RoundSetUp;
     }
 
     void DoGameResults() {
 
+    }
+
+    public void EndRoundEarly() {
+        Debug.Log("NinjaGameManager EndRoundEarly");
+        if (!isMasterClient)
+            return;
+            
+        // TODO find the current state and go to the next one
     }
 }
