@@ -31,6 +31,6 @@ public class TimerView : MonoBehaviour
 
     private bool IsInRound()
     {
-        return _state == NinjaGameManager.GameState.Round1 || _state == NinjaGameManager.GameState.Round2;
+        return _state == NinjaGameManager.GameState.P1AttackRound || _state == NinjaGameManager.GameState.P2AttackRound;
     }
 }
