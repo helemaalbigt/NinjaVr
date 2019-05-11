@@ -514,7 +514,12 @@ PrefabInstance:
     - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
         type: 3}
       propertyPath: _roomToJoinOnStart
-      value: NinjaRoom15
+      value: NinjaRoom18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+        type: 3}
+      propertyPath: _joinRoomOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2152298684760733989, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
         type: 3}

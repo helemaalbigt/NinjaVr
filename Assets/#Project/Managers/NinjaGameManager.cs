@@ -13,8 +13,8 @@ public class NinjaGameManager : RealtimeComponent {
     public  float  roundCount { get { return _roundCount; } }
 
     [SerializeField]
-    private double _roundElasped;
-    public  double  roundElasped { get { return _roundElasped; } }
+    private float _roundElasped;
+    public  float  roundElasped { get { return _roundElasped; } }
 
     [SerializeField]
     private double _roundTimeLimit = 5.0;
@@ -123,7 +123,8 @@ public class NinjaGameManager : RealtimeComponent {
         if (isMasterClient)
             _model.startTime = (float)(realtime.room.time % 10000);
 
-        double elaspedTime;
+        yield return null;
+        float elaspedTime;
 
         do {
             elaspedTime = (float)(realtime.room.time % 10000) - _model.startTime;
@@ -142,8 +143,10 @@ public class NinjaGameManager : RealtimeComponent {
     IEnumerator DoP2AttackRound() {
         if (isMasterClient)
             _model.startTime = (float)(realtime.room.time % 10000);
+        
+        yield return null;
 
-        double elaspedTime;
+        float elaspedTime;
 
         do {
             elaspedTime = (float)(realtime.room.time % 10000) - _model.startTime;
