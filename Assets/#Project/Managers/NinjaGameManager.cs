@@ -37,7 +37,12 @@ public class NinjaGameManager : RealtimeComponent
     }
 
     private NinjaGameManagerModel _model;
-    public  NinjaGameManagerModel  model { set { SetModel(value); } }
+
+    public NinjaGameManagerModel model
+    {
+        set { SetModel(value); }
+        get { return _model; }
+    }
 
     private bool isMasterClient { get { return realtime.clientID == 0; } }
 

@@ -21,7 +21,9 @@ public class TimerView : MonoBehaviour
     {
         if (IsInRound())
         {
-            _timertext.text = StringUtils.FormatSeconds((float)(_gameManager.roundTimeLimit - _gameManager.roundElasped));
+            var time = (float) (_gameManager.roundTimeLimit - _gameManager.roundElasped);
+            time = Mathf.Clamp(time, 0, float.PositiveInfinity);
+            _timertext.text = StringUtils.FormatSeconds(time);
         }
         else
         {

@@ -3,37 +3,42 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class ArenaView : MonoBehaviour
 {
-    public UserStyleList UserStyles;
+    public NinjaGameManager _gameManager;
 
+    [Space(25)]
+    public UserStyleList UserStyles;
     public Material _matBorder;
     public Light _spotLight;
 
     private Color _matDefaultColor;
     private Color _lightDefaultColor;
 
-    void Awake()
+    void Start()
     {
         _matDefaultColor = _matBorder.color;
         _lightDefaultColor = _spotLight.color;
 
-        SetArenaView(UserStyles.GetStyle(AttackingPlayer.none));
+        _gameManager.OnGameStateChanged += OnStateChanged;
+
+        if(_gameManager.model != null)
+            OnStateChanged((NinjaGameManager.GameState) _gameManager.model.gameState);
     }
 
-    void Update()
+    private void OnStateChanged(NinjaGameManager.GameState state)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        switch (state)
         {
-            SetArenaView(UserStyles.GetStyle(AttackingPlayer.one));
-        }
+            case NinjaGameManager.GameState.P1AttackRound:
+                SetArenaView(UserStyles.p1);
+                break;
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SetArenaView(UserStyles.GetStyle(AttackingPlayer.two));
-        }
+            case NinjaGameManager.GameState.P2AttackRound:
+                SetArenaView(UserStyles.p2);
+                break;
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            SetArenaView(UserStyles.GetStyle(AttackingPlayer.none));
+            default:
+                SetArenaView(UserStyles.defaultStyle);
+                break;
         }
     }
 
