@@ -33,7 +33,7 @@ public class AvatarView : MonoBehaviour
 
         int ownerID = realtimeView.ownerID;
 
-        AttackerStyle style = ownerID == 0 ? _userStyleList.p1 : _userStyleList.p2;
+        player = ownerID == 0 ? AttackingPlayer.one : AttackingPlayer.two;
     }
 
     public void SetStyle(AttackerStyle style)
