@@ -7,7 +7,7 @@ public class PlayerHit : MonoBehaviour {
     [SerializeField] private Transform _rightHand;
     [SerializeField] private Transform _leftHand;
 
-    [SerializeField] private float _radius;
+    [SerializeField] private float _radius = 0.1f;
 
     [SerializeField] private LayerMask _headLayer;
 

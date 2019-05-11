@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 5733257234433578646}
   - component: {fileID: 5733257234433578641}
   - component: {fileID: 6813318301710874908}
+  - component: {fileID: 991034923}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -334,11 +335,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc850178a5c64842a991f0debfac2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _userStyleList: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
+  _userStyleList: {fileID: 0}
   _style: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
   _head: {fileID: 7477788490406011394}
   _handL: {fileID: 9020566644529180996}
   _handR: {fileID: 6892013278699093472}
+--- !u!114 &991034923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876990400898648450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230d5235e9b0ddf44b291e4e8278f2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rightHand: {fileID: 5733257235968053554}
+  _leftHand: {fileID: 5733257234831846128}
+  _radius: 0.1
+  _headLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &1530868369034323725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,6 +450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HeadModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945028651443629773, guid: fe209a1b956425549a9fe905b1019580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8945028651443629769, guid: fe209a1b956425549a9fe905b1019580,
         type: 3}
