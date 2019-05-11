@@ -340,6 +340,8 @@ MonoBehaviour:
   _head: {fileID: 7477788490406011394}
   _handL: {fileID: 9020566644529180996}
   _handR: {fileID: 6892013278699093472}
+  _eyes: {fileID: 6071221261518856691}
+  _player: 0
 --- !u!114 &991034923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +524,12 @@ Transform:
 --- !u!23 &7477788490406011394 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8945028651443629771, guid: fe209a1b956425549a9fe905b1019580,
+    type: 3}
+  m_PrefabInstance: {fileID: 2010102046280813769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6071221261518856691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5738745614414114106, guid: fe209a1b956425549a9fe905b1019580,
     type: 3}
   m_PrefabInstance: {fileID: 2010102046280813769}
   m_PrefabAsset: {fileID: 0}

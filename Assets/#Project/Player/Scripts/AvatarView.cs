@@ -12,9 +12,11 @@ public class AvatarView : MonoBehaviour
     public Renderer _head;
     public Renderer _handL;
     public Renderer _handR;
+    public GameObject _eyes;
 
     private RealtimeView realtimeView;
 
+    [SerializeField]
     private AttackingPlayer _player;
     public  AttackingPlayer  player
     {
@@ -34,6 +36,11 @@ public class AvatarView : MonoBehaviour
         int ownerID = realtimeView.ownerID;
 
         player = ownerID == 0 ? AttackingPlayer.one : AttackingPlayer.two;
+
+        if (realtimeView.isOwnedLocally)
+        {
+            _eyes.SetActive(false);
+        }
     }
 
     public void SetStyle(AttackerStyle style)
