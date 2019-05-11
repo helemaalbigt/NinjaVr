@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Normal.Realtime;
 
-public class NinjaGameManager : RealtimeComponent
-{
+public class NinjaGameManager : RealtimeComponent {
 
     public event Action<GameState> OnGameStateChanged;
 
@@ -122,12 +121,12 @@ public class NinjaGameManager : RealtimeComponent
 
     IEnumerator DoP1AttackRound() {
         if (isMasterClient)
-            _model.startTime = realtime.room.time;
+            _model.startTime = (float)(realtime.room.time % 10000);
 
         double elaspedTime;
 
         do {
-            elaspedTime = realtime.room.time - _model.startTime;
+            elaspedTime = (float)(realtime.room.time % 10000) - _model.startTime;
             yield return null;
             _roundElasped = elaspedTime;
 
@@ -142,12 +141,12 @@ public class NinjaGameManager : RealtimeComponent
         
     IEnumerator DoP2AttackRound() {
         if (isMasterClient)
-            _model.startTime = realtime.room.time;
+            _model.startTime = (float)(realtime.room.time % 10000);
 
         double elaspedTime;
 
         do {
-            elaspedTime = realtime.room.time - _model.startTime;
+            elaspedTime = (float)(realtime.room.time % 10000) - _model.startTime;
             yield return null;
             _roundElasped = elaspedTime;
 

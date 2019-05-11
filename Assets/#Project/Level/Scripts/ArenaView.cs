@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
-public class ArenaView : MonoBehaviour
-{
+public class ArenaView : MonoBehaviour {
     public NinjaGameManager _gameManager;
     public Realtime _realtime;
 
