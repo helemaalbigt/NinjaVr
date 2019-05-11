@@ -511,16 +511,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Realtime
       objectReference: {fileID: 0}
-    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
-        type: 3}
-      propertyPath: _roomToJoinOnStart
-      value: NinjaRoom18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
-        type: 3}
-      propertyPath: _joinRoomOnStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2152298684760733989, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -575,6 +565,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+        type: 3}
+      propertyPath: _roomToJoinOnStart
+      value: NinjaRoom17
       objectReference: {fileID: 0}
     - target: {fileID: 1988562544, guid: 07f6e84fc0bf16b4c98a0091f540ce1c, type: 3}
       propertyPath: _localAvatarPrefab
@@ -890,12 +885,12 @@ PrefabInstance:
       propertyPath: _realtime
       value: 
       objectReference: {fileID: 1965597443}
-    - target: {fileID: 5733257234831846134, guid: 3d0cb5456a892e84c82d7371ac251ada,
+    - target: {fileID: 5733257235968053552, guid: 3d0cb5456a892e84c82d7371ac251ada,
         type: 3}
       propertyPath: _realtime
       value: 
       objectReference: {fileID: 1965597443}
-    - target: {fileID: 5733257235968053552, guid: 3d0cb5456a892e84c82d7371ac251ada,
+    - target: {fileID: 5733257234831846134, guid: 3d0cb5456a892e84c82d7371ac251ada,
         type: 3}
       propertyPath: _realtime
       value: 
