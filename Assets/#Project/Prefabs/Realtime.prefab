@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2152298684760733989}
   - component: {fileID: 2152298684760733988}
+  - component: {fileID: 1988562544}
   m_Layer: 0
   m_Name: Realtime
   m_TagString: Untagged
@@ -44,6 +45,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _appKey: 7e2e3b06-2c3e-433b-9879-cc66fa39ad53
-  _roomToJoinOnStart: Test Room
+  _roomToJoinOnStart: NinjaRoom
   _joinRoomOnStart: 1
   _debugLogging: 0
+--- !u!114 &1988562544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152298684760733991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b6ae53fe1e66d429cc41bbf5b29cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localAvatarPrefab: {fileID: 2082246312027780912, guid: 5d0ea07f8b3cd974b88c8c42f5b34103,
+    type: 3}
+  _localPlayer:
+    root: {fileID: 0}
+    head: {fileID: 0}
+    leftHand: {fileID: 0}
+    rightHand: {fileID: 0}

@@ -125,7 +125,7 @@ namespace Normal.Realtime {
                                 // the UUID on the copy. And since the original is going to be the one that already exists in the map, that means this one is the copy.
                                 // For root scene views that have the same UUID as a view in another scene, we'll log an error below. That can happen when a scene is saved
                                 // as a copy, and the copy is additively loaded. In that case, we don't know which view the developer will want to keep so we log the error.
-                                Debug.LogWarning("Realtime: Found a RealtimeView in scene with a duplicate UUID. Resetting the UUID on the copy.");
+                                Debug.LogWarning(realtimeView.transform.name + "Realtime: Found a RealtimeView in scene with a duplicate UUID. Resetting the UUID on the copy.");
                                 sceneViewUUID = SetSceneViewUUIDUsingByteArray(sceneViewUUIDProperty, Guid.NewGuid().ToByteArray());
                                 break;
                             }
