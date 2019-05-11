@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-public class ArenaView : MonoBehaviour
-{
+public class ArenaView : MonoBehaviour {
     public NinjaGameManager _gameManager;
 
     [Space(25)]

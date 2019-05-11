@@ -2,8 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerView : MonoBehaviour
-{
+public class TimerView : MonoBehaviour {
+    
     public Text _timertext;
     public NinjaGameManager _gameManager;
 
