@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc850178a5c64842a991f0debfac2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _userStyleList: {fileID: 0}
+  _userStyleList: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
   _style: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
   _head: {fileID: 7477788490406011394}
   _handL: {fileID: 9020566644529180996}

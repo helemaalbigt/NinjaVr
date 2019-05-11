@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerView : MonoBehaviour
 {
-    public TextMesh _timertext;
+    public Text _timertext;
     public NinjaGameManager _gameManager;
 
     private NinjaGameManager.GameState _state;
