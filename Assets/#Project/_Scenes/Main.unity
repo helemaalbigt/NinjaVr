@@ -185,14 +185,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 25708807427236250, guid: 0cd3960948835be4aa237782f1102938,
+        type: 3}
+      propertyPath: _trackingOriginType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 25708808287523420, guid: 0cd3960948835be4aa237782f1102938,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 25708808287523421, guid: 0cd3960948835be4aa237782f1102938,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd3960948835be4aa237782f1102938, type: 3}
---- !u!1 &888109303 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 25708807427236252, guid: 0cd3960948835be4aa237782f1102938,
-    type: 3}
-  m_PrefabInstance: {fileID: 888109302}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1919126614
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,10 +300,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+        type: 3}
+      propertyPath: _roomToJoinOnStart
+      value: NinjaRoom15
+      objectReference: {fileID: 0}
     - target: {fileID: 1988562544, guid: 07f6e84fc0bf16b4c98a0091f540ce1c, type: 3}
       propertyPath: _localAvatarPrefab
       value: 
-      objectReference: {fileID: 888109303}
+      objectReference: {fileID: 8876990400898648450, guid: 3d0cb5456a892e84c82d7371ac251ada,
+        type: 3}
     - target: {fileID: 1988562544, guid: 07f6e84fc0bf16b4c98a0091f540ce1c, type: 3}
       propertyPath: _localPlayer.root
       value: 
