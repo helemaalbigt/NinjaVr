@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Normal.Realtime;
 
-public class NinjaGameManager : RealtimeComponent {
+public class NinjaGameManager : RealtimeComponent
+{
+
+    public event Action<GameState> OnGameStateChanged;
 
     [SerializeField]
     private double _roundElasped;
@@ -64,12 +68,15 @@ public class NinjaGameManager : RealtimeComponent {
         if (_model != null) {
             // Register for events
             _model.gameStateDidChange += GameStateChanged;
-            
+
+            GameStateChanged(_model, _model.gameState);
         }
     }
 
     void GameStateChanged(NinjaGameManagerModel model, uint value) {
         Debug.Log("Current GameState: " + (GameState)value);
+
+        OnGameStateChanged?.Invoke((GameState)value);
 
         switch (value) {
             case ((uint)NinjaGameManager.GameState.Intro):
