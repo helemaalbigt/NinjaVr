@@ -101,7 +101,6 @@ public class NinjaGameManager : RealtimeComponent
                 break;
 
             case ((uint)NinjaGameManager.GameState.Break):
-                    Break();
                 break;
 
             case ((uint)NinjaGameManager.GameState.P2AttackRound):
