@@ -30,6 +30,12 @@ public class PlayerHit : MonoBehaviour {
 
         _ninjaGameManager.EndRoundEarly();
         Debug.Log(fistPoint.gameObject.name + " punched the head");
+
+        var avatarView = colliders[0].GetComponentInParent<AvatarView>();
+        if (avatarView != null)
+        {
+            avatarView.ShowBrokenHead();
+        }
     }
 
     void OnDrawGizmosSelected() {
