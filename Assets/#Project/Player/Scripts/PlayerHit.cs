@@ -18,8 +18,10 @@ public class PlayerHit : MonoBehaviour {
     }
 
     void Update() {
-        CheckForHit(_rightHand);
-        CheckForHit(_leftHand);
+        if (GameUtils.instance.LocalPlayerAttacking()){
+            CheckForHit(_rightHand);
+            CheckForHit(_leftHand);
+        }
     }
 
     void CheckForHit(Transform fistPoint) {
@@ -35,6 +37,7 @@ public class PlayerHit : MonoBehaviour {
         if (avatarView != null)
         {
             avatarView.ShowBrokenHead();
+            avatarView.AddForceToShards(fistPoint.position);
         }
     }
 

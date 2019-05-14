@@ -5,9 +5,6 @@ using Normal.Realtime;
 
 public class AvatarView : MonoBehaviour
 {
-    [SerializeField]
-    private UserStyleList _userStyleList;
-
     public bool _isDummy;
     public UserStyleList _style;
     public Material _avatarReferenceMaterial;
@@ -101,6 +98,14 @@ public class AvatarView : MonoBehaviour
         _brokenWrapper.SetActive(false);
         ResetBrokenHead();
         _normalHeadWrapper.SetActive(true);
+    }
+
+    public void AddForceToShards(Vector3 pos)
+    {
+        foreach (var bod in _shardRigidBodies)
+        {
+            bod.AddExplosionForce(300f, pos, 0.5f);
+        }
     }
 
     private void ResetBrokenHead()

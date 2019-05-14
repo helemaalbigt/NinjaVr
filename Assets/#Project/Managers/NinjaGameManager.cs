@@ -66,6 +66,11 @@ public class NinjaGameManager : RealtimeComponent {
         }
     }
 
+    public GameState GetCurrentGameState()
+    {
+        return (GameState) _model.gameState;
+    }
+
     void SetModel(NinjaGameManagerModel model) {
         if (_model != null) {
             // Clear events
