@@ -18,6 +18,11 @@ public class GameUtils : MonoBehaviour
         return _realtime.clientID == StateToClientId(_gameManager.GetCurrentGameState());
     }
 
+    public bool IsLocalId(int id)
+    {
+        return _realtime.clientID == id;
+    }
+
     public int StateToClientId(NinjaGameManager.GameState state)
     {
         switch (state)

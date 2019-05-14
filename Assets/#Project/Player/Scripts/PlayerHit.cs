@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Normal.Realtime;
 using UnityEngine;
 
 public class PlayerHit : MonoBehaviour {
@@ -8,7 +9,6 @@ public class PlayerHit : MonoBehaviour {
     [SerializeField] private Transform _leftHand;
 
     [SerializeField] private float _radius = 0.1f;
-
     [SerializeField] private LayerMask _headLayer;
 
     private NinjaGameManager _ninjaGameManager;
@@ -37,7 +37,7 @@ public class PlayerHit : MonoBehaviour {
         if (avatarView != null)
         {
             avatarView.ShowBrokenHead();
-            avatarView.AddForceToShards(fistPoint.position);
+            avatarView.AddForceToShards(300f, fistPoint.position);
         }
     }
 

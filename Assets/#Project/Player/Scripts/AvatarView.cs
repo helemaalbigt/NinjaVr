@@ -67,6 +67,7 @@ public class AvatarView : MonoBehaviour
             if (realtimeView.isOwnedLocally)
             {
                 _eyes.SetActive(false);
+                _head.gameObject.layer = LayerMask.NameToLayer("Default");
             }
         }
     }
@@ -100,11 +101,11 @@ public class AvatarView : MonoBehaviour
         _normalHeadWrapper.SetActive(true);
     }
 
-    public void AddForceToShards(Vector3 pos)
+    public void AddForceToShards(float force, Vector3 pos)
     {
         foreach (var bod in _shardRigidBodies)
         {
-            bod.AddExplosionForce(300f, pos, 0.5f);
+            bod.AddExplosionForce(force, pos, 0.5f);
         }
     }
 
