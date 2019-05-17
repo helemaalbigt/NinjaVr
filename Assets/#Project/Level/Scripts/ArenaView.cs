@@ -33,20 +33,6 @@ public class ArenaView : MonoBehaviour {
         SetStateBoards(state);
     }
 
-    private int StateToId(NinjaGameManager.GameState state)
-    {
-        switch (state)
-        {
-            default:
-            case NinjaGameManager.GameState.P1AttackRound:
-               return 0;
-                
-
-            case NinjaGameManager.GameState.P2AttackRound:
-                return 1;
-        }
-    }
-
     private void SetArenaViewFromState(NinjaGameManager.GameState state)
     {
         switch (state)
@@ -57,6 +43,17 @@ public class ArenaView : MonoBehaviour {
 
             case NinjaGameManager.GameState.P2AttackRound:
                 SetArenaView(UserStyles.p2);
+                break;
+
+            case NinjaGameManager.GameState.GameResults:
+                if (GameUtils.instance.IsIdWinner(0))
+                {
+                    SetArenaView(UserStyles.p1);
+                }
+                else
+                {
+                    SetArenaView(UserStyles.p2);
+                }
                 break;
 
             default:
@@ -83,21 +80,41 @@ public class ArenaView : MonoBehaviour {
 
     private void SetStateBoards(NinjaGameManager.GameState state)
     {
-        if (state == NinjaGameManager.GameState.P1AttackRound || state == NinjaGameManager.GameState.P2AttackRound)
+        switch (state)
         {
-            int clientId = _realtime.clientID;
-            if (clientId == StateToId(state))
-            {
-                SetAllStateText("Attack!");
-            }
-            else
-            {
-                SetAllStateText("Defend!");
-            }
+            case NinjaGameManager.GameState.P1AttackRound:
+            case NinjaGameManager.GameState.P2AttackRound:
+                SetFightText(state);
+                break;
+
+            case NinjaGameManager.GameState.GameResults:
+                SetWinner();
+                break;
+
+            case NinjaGameManager.GameState.Intro:
+            default:
+                SetAllStateText("Round Start");
+                break;
+        }
+    }
+
+    private void SetFightText(NinjaGameManager.GameState state)
+    {
+        int clientId = _realtime.clientID;
+        if (clientId == GameUtils.instance.StateToClientId(state))
+        {
+            SetAllStateText("Attack!");
         }
         else
         {
-            SetAllStateText("");
+            SetAllStateText("Defend!");
         }
+    }
+
+    private void SetWinner()
+    {
+        SetAllStateText(GameUtils.instance.IsIdWinner(0) ? 
+            "Red Wins!" :
+            "Blue Wins!");
     }
 }

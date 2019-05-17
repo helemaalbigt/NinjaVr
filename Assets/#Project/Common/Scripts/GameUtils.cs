@@ -18,6 +18,11 @@ public class GameUtils : MonoBehaviour
         return _realtime.clientID == StateToClientId(_gameManager.GetCurrentGameState());
     }
 
+    public bool IsIdWinner(int playerId)
+    {
+        return _gameManager.model.winnerId == playerId;
+    }
+
     public bool IsLocalId(int id)
     {
         return _realtime.clientID == id;
