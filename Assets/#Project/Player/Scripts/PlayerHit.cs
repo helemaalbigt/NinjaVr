@@ -19,7 +19,7 @@ public class PlayerHit : MonoBehaviour {
     }
 
     void Update() {
-        if (GameUtils.instance.LocalPlayerAttacking()){
+        if (GameUtils.instance.PlayerIdIsAttacking(_realtimeView.ownerID)){
             CheckForHit(_rightHand);
             CheckForHit(_leftHand);
         }
@@ -31,8 +31,8 @@ public class PlayerHit : MonoBehaviour {
         if (colliders.Length == 0)
             return;
 
-        var realtimeView = colliders[0].transform.parent.parent.GetComponent<RealtimeView>();
-        if (realtimeView == null || realtimeView.ownerID == _realtimeView.ownerID)
+        var hitRealtimeView = colliders[0].transform.parent.parent.GetComponent<RealtimeView>();
+        if (hitRealtimeView == null || hitRealtimeView.ownerID == _realtimeView.ownerID)
             return;
 
         _ninjaGameManager.EndRoundEarly(_realtimeView.ownerID);
