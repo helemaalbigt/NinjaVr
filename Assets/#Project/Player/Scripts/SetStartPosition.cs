@@ -25,6 +25,7 @@ public class SetStartPosition : MonoBehaviour {
     }
 
     void PlacePlayer(Realtime realtime) {
+        Debug.Log("PlacePlayer ***");
         Transform startingPoint = _realtime.clientID == 0 ? _player1StartingPoint : _player2StartingPoint;
 
         Debug.Log("SetStartPosition PlacePlayer clientID " + _realtime.clientID + " " + startingPoint.name);
