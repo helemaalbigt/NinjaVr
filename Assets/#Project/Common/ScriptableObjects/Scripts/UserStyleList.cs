@@ -8,7 +8,7 @@ public class AttackerStyle
     public Color lightingColor;
 }
 
-[CreateAssetMenu(fileName = "Data", menuName = "NinjaVR/UserParamList", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "NinjaVR/UserStyleList", order = 1)]
 public class UserStyleList : ScriptableObject
 {
     public AttackerStyle defaultStyle;

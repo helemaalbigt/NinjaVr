@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Normal.Realtime;
 using UnityEngine;
 
 public class PlayerHit : MonoBehaviour {
@@ -8,7 +9,6 @@ public class PlayerHit : MonoBehaviour {
     [SerializeField] private Transform _leftHand;
 
     [SerializeField] private float _radius = 0.1f;
-
     [SerializeField] private LayerMask _headLayer;
 
     private NinjaGameManager _ninjaGameManager;
@@ -18,8 +18,10 @@ public class PlayerHit : MonoBehaviour {
     }
 
     void Update() {
-        CheckForHit(_rightHand);
-        CheckForHit(_leftHand);
+        if (GameUtils.instance.LocalPlayerAttacking()){
+            CheckForHit(_rightHand);
+            CheckForHit(_leftHand);
+        }
     }
 
     void CheckForHit(Transform fistPoint) {
@@ -30,6 +32,13 @@ public class PlayerHit : MonoBehaviour {
 
         _ninjaGameManager.EndRoundEarly();
         Debug.Log(fistPoint.gameObject.name + " punched the head");
+
+        var avatarView = colliders[0].GetComponentInParent<AvatarView>();
+        if (avatarView != null)
+        {
+            avatarView.ShowBrokenHead();
+            avatarView.AddForceToShards(300f, fistPoint.position);
+        }
     }
 
     void OnDrawGizmosSelected() {
