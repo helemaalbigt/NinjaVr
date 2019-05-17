@@ -5523,7 +5523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc850178a5c64842a991f0debfac2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _userStyleList: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
+  _isDummy: 0
   _style: {fileID: 11400000, guid: 43c6bc59b5ea28b42833dbfd14c1380b, type: 2}
   _avatarReferenceMaterial: {fileID: 2100000, guid: 1a990286ab8994c47bf170629a8373be,
     type: 2}
@@ -5598,6 +5598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rightHand: {fileID: 5733257234831846128}
   _leftHand: {fileID: 5733257235968053554}
+  _realtimeView: {fileID: 5733257234433578646}
   _radius: 0.1
   _headLayer:
     serializedVersion: 2

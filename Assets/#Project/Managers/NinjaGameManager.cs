@@ -173,11 +173,13 @@ public class NinjaGameManager : RealtimeComponent {
 
     }
 
-    public void EndRoundEarly() {
-        Debug.Log("NinjaGameManager EndRoundEarly");
+    public void EndRoundEarly(int winnerId)
+    {
         if (!isMasterClient)
             return;
 
-        //_model.gameState = (uint)GameState.GameResults;
+        Debug.Log("NinjaGameManager EndRoundEarly");
+        _model.winnerId = winnerId;
+        _model.gameState = (uint)GameState.GameResults;
     }
 }

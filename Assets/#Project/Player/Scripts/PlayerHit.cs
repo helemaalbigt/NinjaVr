@@ -7,6 +7,7 @@ public class PlayerHit : MonoBehaviour {
     
     [SerializeField] private Transform _rightHand;
     [SerializeField] private Transform _leftHand;
+    [SerializeField] private RealtimeView _realtimeView;
 
     [SerializeField] private float _radius = 0.1f;
     [SerializeField] private LayerMask _headLayer;
@@ -30,7 +31,11 @@ public class PlayerHit : MonoBehaviour {
         if (colliders.Length == 0)
             return;
 
-        _ninjaGameManager.EndRoundEarly();
+        var realtimeView = colliders[0].transform.parent.parent.GetComponent<RealtimeView>();
+        if (realtimeView == null || realtimeView.ownerID == _realtimeView.ownerID)
+            return;
+
+        _ninjaGameManager.EndRoundEarly(_realtimeView.ownerID);
         Debug.Log(fistPoint.gameObject.name + " punched the head");
 
         var avatarView = colliders[0].GetComponentInParent<AvatarView>();
