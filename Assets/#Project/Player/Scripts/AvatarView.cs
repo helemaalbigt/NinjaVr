@@ -92,6 +92,8 @@ public class AvatarView : MonoBehaviour
         _brokenWrapper.transform.rotation = _normalHeadWrapper.transform.rotation;
         _brokenWrapper.SetActive(true);
         _normalHeadWrapper.SetActive(false);
+        _handL.gameObject.SetActive(false);
+        _handR.gameObject.SetActive(false);
     }
 
     public void ShowRegularHead()
@@ -99,6 +101,8 @@ public class AvatarView : MonoBehaviour
         _brokenWrapper.SetActive(false);
         ResetBrokenHead();
         _normalHeadWrapper.SetActive(true);
+        _handL.gameObject.SetActive(true);
+        _handR.gameObject.SetActive(true);
     }
 
     public void AddForceToShards(float force, Vector3 pos)
