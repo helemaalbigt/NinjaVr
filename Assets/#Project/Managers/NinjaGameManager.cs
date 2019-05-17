@@ -75,6 +75,7 @@ public class NinjaGameManager : RealtimeComponent {
         if (_model != null) {
             // Clear events
             _model.gameStateDidChange -= GameStateChanged;
+            _model.winnerIdDidChange  -= WinnerIdChanged;
         }
 
         _model = model;
@@ -82,6 +83,7 @@ public class NinjaGameManager : RealtimeComponent {
         if (_model != null) {
             // Register for events
             _model.gameStateDidChange += GameStateChanged;
+            _model.winnerIdDidChange  += WinnerIdChanged;
 
             GameStateChanged(_model, _model.gameState);
         }
@@ -116,6 +118,10 @@ public class NinjaGameManager : RealtimeComponent {
                 break;
         }
 
+    }
+
+    void WinnerIdChanged(NinjaGameManagerModel model, int value) {
+        Debug.Log("WinnerIdChanged " + value);
     }
 
     void DoRoundSetUp() {
@@ -178,7 +184,6 @@ public class NinjaGameManager : RealtimeComponent {
         if (!isMasterClient)
             return;
 
-        Debug.Log("NinjaGameManager EndRoundEarly");
         _model.winnerId = winnerId;
         _model.gameState = (uint)GameState.GameResults;
     }
