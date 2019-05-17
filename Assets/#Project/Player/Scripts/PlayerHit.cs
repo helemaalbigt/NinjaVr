@@ -35,9 +35,8 @@ public class PlayerHit : MonoBehaviour {
         if (hitRealtimeView == null || hitRealtimeView.ownerID == _realtimeView.ownerID)
             return;
 
-        if ()
+        
         _ninjaGameManager.EndRoundEarly(_realtimeView.ownerID);
-        Debug.Log();
         Debug.Log(fistPoint.gameObject.name + " punched the head");
 
         var avatarView = colliders[0].GetComponentInParent<AvatarView>();
