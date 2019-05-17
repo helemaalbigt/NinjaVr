@@ -172,7 +172,7 @@ public class NinjaGameManager : RealtimeComponent {
         Debug.Log("NinjaGameManager EndRoundEarly");
         if (!isMasterClient)
             return;
-            
-        // TODO find the current state and go to the next one
+
+        //_model.gameState = (uint)GameState.GameResults;
     }
 }

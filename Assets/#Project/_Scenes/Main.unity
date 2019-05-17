@@ -202,6 +202,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd3960948835be4aa237782f1102938, type: 3}
+--- !u!1 &888109303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 25708807427236252, guid: 0cd3960948835be4aa237782f1102938,
+    type: 3}
+  m_PrefabInstance: {fileID: 888109302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &888109304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888109303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700168c0bb52ef24386fff70b3c9dbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 1965597443}
+  _player1StartingPoint: {fileID: 4934108310836124850}
+  _player2StartingPoint: {fileID: 4934108310836124849}
 --- !u!1001 &941284584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +465,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1141500263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1141500264}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1141500264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141500263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67572355, y: 1.1451081, z: -0.22396013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1318159193 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3061549987373277516, guid: 2f45da41471d68a4c9dbcb8d5470d304,
@@ -493,7 +544,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2117653218}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2117653219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99dcaba2234393f4a829d0fd1fb4a608, type: 3}
@@ -510,6 +561,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Realtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+        type: 3}
+      propertyPath: _roomToJoinOnStart
+      value: NinjaRoom19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+        type: 3}
+      propertyPath: _joinRoomOnStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2152298684760733989, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
         type: 3}
@@ -566,11 +627,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2152298684760733988, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
-        type: 3}
-      propertyPath: _roomToJoinOnStart
-      value: NinjaRoom17
-      objectReference: {fileID: 0}
     - target: {fileID: 1988562544, guid: 07f6e84fc0bf16b4c98a0091f540ce1c, type: 3}
       propertyPath: _localAvatarPrefab
       value: 
@@ -594,6 +650,26 @@ PrefabInstance:
       objectReference: {fileID: 25708808276563287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f6e84fc0bf16b4c98a0091f540ce1c, type: 3}
+--- !u!1 &2117653219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2152298684760733991, guid: 07f6e84fc0bf16b4c98a0091f540ce1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117653218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117653220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117653219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96da42a107ed3943b71f3f9ff99ae59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: NinjatestRoom
+  _realtime: {fileID: 1965597443}
 --- !u!4 &25708807427236251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 25708807427236251, guid: 0cd3960948835be4aa237782f1102938,
@@ -713,6 +789,18 @@ PrefabInstance:
       objectReference: {fileID: 1318159193}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f45da41471d68a4c9dbcb8d5470d304, type: 3}
+--- !u!4 &4934108310836124849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6002752731812978062, guid: 2f45da41471d68a4c9dbcb8d5470d304,
+    type: 3}
+  m_PrefabInstance: {fileID: 4934108310836124848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4934108310836124850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7276693470320804383, guid: 2f45da41471d68a4c9dbcb8d5470d304,
+    type: 3}
+  m_PrefabInstance: {fileID: 4934108310836124848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7489739532827362457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -885,12 +973,12 @@ PrefabInstance:
       propertyPath: _realtime
       value: 
       objectReference: {fileID: 1965597443}
-    - target: {fileID: 5733257235968053552, guid: 3d0cb5456a892e84c82d7371ac251ada,
+    - target: {fileID: 5733257234831846134, guid: 3d0cb5456a892e84c82d7371ac251ada,
         type: 3}
       propertyPath: _realtime
       value: 
       objectReference: {fileID: 1965597443}
-    - target: {fileID: 5733257234831846134, guid: 3d0cb5456a892e84c82d7371ac251ada,
+    - target: {fileID: 5733257235968053552, guid: 3d0cb5456a892e84c82d7371ac251ada,
         type: 3}
       propertyPath: _realtime
       value: 
