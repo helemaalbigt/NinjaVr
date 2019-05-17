@@ -5484,22 +5484,25 @@ MonoBehaviour:
     component: {fileID: 5733257234433578641}
     componentIDHasBeenUsed: 1
   - componentID: 2
+    component: {fileID: 8876990400898648451}
+    componentIDHasBeenUsed: 1
+  - componentID: 3
     component: {fileID: 2019767867}
     componentIDHasBeenUsed: 1
   _parentView: {fileID: 0}
   _childViews:
   - viewID: 1
-    view: {fileID: 5733257235173214758}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 5733257235173214758}
-  - viewID: 2
     view: {fileID: 5733257234831846134}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 5733257234831846134}
-  - viewID: 3
+  - viewID: 2
     view: {fileID: 5733257235968053552}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 5733257235968053552}
+  - viewID: 3
+    view: {fileID: 5733257235173214758}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 5733257235173214758}
 --- !u!114 &5733257234433578641
 MonoBehaviour:
   m_ObjectHideFlags: 0
