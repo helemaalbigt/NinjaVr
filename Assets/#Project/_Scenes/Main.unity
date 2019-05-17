@@ -185,44 +185,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 25708807427236250, guid: 0cd3960948835be4aa237782f1102938,
-        type: 3}
-      propertyPath: _trackingOriginType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 25708808287523420, guid: 0cd3960948835be4aa237782f1102938,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 25708808287523421, guid: 0cd3960948835be4aa237782f1102938,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.05
-      objectReference: {fileID: 0}
+    - target: {fileID: 888109304, guid: 0cd3960948835be4aa237782f1102938, type: 3}
+      propertyPath: _realtime
+      value: 
+      objectReference: {fileID: 1965597443}
+    - target: {fileID: 888109304, guid: 0cd3960948835be4aa237782f1102938, type: 3}
+      propertyPath: _player1StartingPoint
+      value: 
+      objectReference: {fileID: 4934108310836124850}
+    - target: {fileID: 888109304, guid: 0cd3960948835be4aa237782f1102938, type: 3}
+      propertyPath: _player2StartingPoint
+      value: 
+      objectReference: {fileID: 4934108310836124849}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd3960948835be4aa237782f1102938, type: 3}
---- !u!1 &888109303 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 25708807427236252, guid: 0cd3960948835be4aa237782f1102938,
-    type: 3}
-  m_PrefabInstance: {fileID: 888109302}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &888109304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888109303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700168c0bb52ef24386fff70b3c9dbac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 1965597443}
-  _player1StartingPoint: {fileID: 4934108310836124850}
-  _player2StartingPoint: {fileID: 4934108310836124849}
 --- !u!1001 &941284584
 PrefabInstance:
   m_ObjectHideFlags: 0

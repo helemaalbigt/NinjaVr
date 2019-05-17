@@ -15,6 +15,10 @@ public class SetStartPosition : MonoBehaviour {
     private Transform _player2StartingPoint;
 
     void Start() {
+        _realtime.didConnectToRoom += PlacePlayer;
+    }
+
+    void PlacePlayer(Realtime realtime) {
         Transform startingPoint = _realtime.clientID == 0 ? _player1StartingPoint : _player2StartingPoint;
 
         transform.position = startingPoint.position;
